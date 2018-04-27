@@ -3,11 +3,11 @@ echo "Bash starting here ------------------------------"
 # Development
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/development-cert.cer.enc -d -a -out scripts/certs/development-cert.cer
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/development-key.p12.enc -d -a -out scripts/certs/development-key.p12
-openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/provisioning-profile/profile-development-olympus.mobileprovision.enc -d -a -out scripts/provisioning-profile/profile-development-olympus.mobileprovision
+openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/provisioning-profile/profile-development-olympus.mobileprovision.enc -d -a -out scripts/provisioning-profile/development-provisioning-profile.mobileprovision
 # Distribution
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/distribution-cert.cer.enc -d -a -out scripts/certs/distribution-cert.cer
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/distribution-key.p12.enc -d -a -out scripts/certs/distribution-key.p12
-openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/provisioning-profile/profile-distribution-olympus.mobileprovision.enc -d -a -out scripts/provisioning-profile/profile-distribution-olympus.mobileprovision
+openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/provisioning-profile/profile-distribution-olympus.mobileprovision.enc -d -a -out scripts/provisioning-profile/distribution-provisioning-profile.mobileprovision
 
 # Create custom keychain
 security create-keychain -p $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain
