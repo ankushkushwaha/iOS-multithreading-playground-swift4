@@ -38,4 +38,4 @@ xcodebuild archive -workspace Multithreadingtest.xcworkspace -scheme Multithread
 
 xcodebuild -exportArchive -archivePath ./build/Products/restcomm-olympus.xcarchive -exportOptionsPlist ./scripts/exportOptions-Enterprise.plist -exportPath ./build/Products/IPA
 
-echo "IPA Created"
+echo "Bash Ends here ------------------------------"
