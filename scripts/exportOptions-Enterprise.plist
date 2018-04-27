@@ -7,8 +7,15 @@
 	<key>compileBitcode</key>
 	<false/>
 	<key>signingStyle</key>
-	<string>automatic</string>
+	<string>manual</string>
 	<key>teamID</key>
 	<string>SB865CS7Y5</string>
+	<key>signingCertificate</key>
+      <string>iPhone Distribution: S4 Finland Oy</string>
+	<key>provisioningProfiles</key>
+      <dict>
+        <key>com.starcut.test.Test</key>
+        <string>a65e608a-e385-40a4-9049-0e2907a8ab64</string>
+       </dict>
 </dict>
 </plist>
