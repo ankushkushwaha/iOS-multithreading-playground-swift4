@@ -29,11 +29,13 @@ security import ./scripts/certs/distribution-key.p12 -k ios-build.keychain -P $S
 # Fix for OS X Sierra that hungs in the codesign step
 security set-key-partition-list -S apple-tool:,apple: -s -k $SECURITY_PASSWORD ios-build.keychain > /dev/null
 
-#
-#mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-#cp "./scripts/provisioning-profile/development-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
-#cp "./scripts/provisioning-profile/distribution-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
-#
-#xcodebuild archive -workspace Examples/restcomm-olympus/restcomm-olympus.xcworkspace -scheme restcomm-olympus -configuration Release -derivedDataPath ./build -archivePath ./build/Products/restcomm-olympus.xcarchive
-#
-#xcodebuild -exportArchive -archivePath ./build/Products/restcomm-olympus.xcarchive -exportOptionsPlist ./scripts/exportOptions-Enterprise.plist -exportPath ./build/Products/IPA
+
+mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+cp "./scripts/provisioning-profile/development-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
+cp "./scripts/provisioning-profile/distribution-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
+
+xcodebuild archive -workspace Examples/restcomm-olympus/restcomm-olympus.xcworkspace -scheme restcomm-olympus -configuration Release -derivedDataPath ./build -archivePath ./build/Products/restcomm-olympus.xcarchive
+
+xcodebuild -exportArchive -archivePath ./build/Products/restcomm-olympus.xcarchive -exportOptionsPlist ./scripts/exportOptions-Enterprise.plist -exportPath ./build/Products/IPA
+
+echo "IPA Created"
