@@ -34,7 +34,7 @@ mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 cp "./scripts/provisioning-profile/development-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
 cp "./scripts/provisioning-profile/distribution-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
 
-xcodebuild archive -workspace Examples/restcomm-olympus/restcomm-olympus.xcworkspace -scheme restcomm-olympus -configuration Release -derivedDataPath ./build -archivePath ./build/Products/restcomm-olympus.xcarchive
+xcodebuild archive -workspace Multithreadingtest.xcworkspace -scheme Multithreading -configuration Release -derivedDataPath ./build -archivePath ./build/Products/restcomm-olympus.xcarchive
 
 xcodebuild -exportArchive -archivePath ./build/Products/restcomm-olympus.xcarchive -exportOptionsPlist ./scripts/exportOptions-Enterprise.plist -exportPath ./build/Products/IPA
 
