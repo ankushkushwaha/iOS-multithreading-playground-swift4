@@ -36,6 +36,6 @@ cp "./scripts/provisioning-profile/distribution-provisioning-profile.mobileprovi
 
 xcodebuild archive -workspace Multithreadingtest.xcworkspace -scheme Multithreading -configuration Release -derivedDataPath ./build -archivePath ./build/Products/restcomm-olympus.xcarchive
 
-xcodebuild -exportArchive -archivePath ./build/Products/restcomm-olympus.xcarchive -exportOptionsPlist ./scripts/exportOptions-Enterprise.plist -exportPath ./build/Products/IPA
+xcodebuild -exportArchive -archivePath ./build/Products/restcomm-olympus.xcarchive -exportOptionsPlist ./scripts/exportOptions-Enterprise.plist -exportPath ./build/Products/IPA  -allowProvisioningUpdates
 
 echo "Bash Ends here ------------------------------"
