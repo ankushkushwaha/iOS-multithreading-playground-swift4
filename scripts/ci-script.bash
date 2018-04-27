@@ -9,17 +9,17 @@ openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/distribution-cert.
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/distribution-key.p12.enc -d -a -out scripts/certs/distribution-key.p12
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/provisioning-profile/profile-distribution-olympus.mobileprovision.enc -d -a -out scripts/provisioning-profile/profile-distribution-olympus.mobileprovision
 
-## Create custom keychain
-#security create-keychain -p $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain
-## Make the ios-build.keychain default, so xcodebuild will use it
-#security default-keychain -s ios-build.keychain
-## Unlock the keychain
-#security unlock-keychain -p $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain
-## Set keychain timeout to 1 hour for long builds
-## see here
-#security set-keychain-settings -t 3600 -l ~/Library/Keychains/ios-build.keychain
-#
-#
+# Create custom keychain
+security create-keychain -p $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain
+# Make the ios-build.keychain default, so xcodebuild will use it
+security default-keychain -s ios-build.keychain
+# Unlock the keychain
+security unlock-keychain -p $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain
+# Set keychain timeout to 1 hour for long builds
+# see here
+security set-keychain-settings -t 3600 -l ~/Library/Keychains/ios-build.keychain
+
+
 #
 #security import ./scripts/certs/AppleWWDRCA.cer -k ios-build.keychain -A
 #security import ./scripts/certs/development-cert.cer -k ios-build.keychain -A
