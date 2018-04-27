@@ -1,0 +1,13 @@
+Xcode commandline: We need to use manual signing
+
+uuid is provisioning's unique id:  get by opening in textedit
+
+Just to archive (not for IPA), xcode checks first if provisioning is set in xcode settings. (need to fake it?)
+
+xcode commandline tool sign in the .archive package with specified profile in exportOptions.plist, And The provisioning profile must be present 
+in ~/Library/MobileDevice/Provisioning Profiles (the default paths of provisionings where xcode put all its provisionings)
+
+
+Make provisioning profile for specific appID in developer portal -> download it, and specify it in exportOptions.plit, then copy it under ~/Library/MobileDevice/Provisioning, only then xcode9 is able to sign IPA, manually
+
+
